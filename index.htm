@@ -7,12 +7,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
 
 <div class="jumbotron text-center">
   <h1>Tanya Yaretzi González Elizondo</h1>
-  <p><span class="glyphicon glyphicon-envelope"></span> tanya.yaretzi@gmail.com</p> 
+  <p> tanya.yaretzi@gmail.com <span class="glyphicon glyphicon-envelope"></span></p> 
 </div>
   
 <div class="container">
@@ -36,6 +37,92 @@
     </div>
   </div>
 </div>
+
+<br>
+<br>
+
+<div class="container" style="background-color: #badbdb;" >
+<div class="row">
+    <div class="col-sm-4">
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="cupcakes.png"  alt="cooking"  width="250" height="250" >
+            <div class="card-body">
+              <h5 class="card-title"><dt>Cooking</dt></h5>
+              <p class="card-text">I'm learning new recipes.</p>
+              <div id="btn1">
+                <button class="btn btn-primary" v-on:click="isHidden = !isHidden">+ Info</button>
+                <p v-if="!isHidden" style="color: #195168">
+                    I enjoy baking cakes
+                </p>
+                </div>
+
+
+              
+            </div>
+          </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card" >
+            <img class="card-img-top" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F91%2Fdb%2F69%2F91db69f426090fa7b4bfa88aaead937a.jpg&f=1&nofb=1" alt="musica"  width="250" height="250">
+            <div class="card-body">
+              <h5 class="card-title"> <dt>Music</dt></h5>
+              <p class="card-text">Music is a way to express emotions and innovation, I enjoy listening the ones with new proposals.</p>
+              <div id="btn2">
+                <button class="btn btn-primary" v-on:click="isHidden = !isHidden">+ Info</button>
+                <p v-if="!isHidden" style="color: #195168">
+                    I love rock and all it's subgenres.
+                </p>
+                </div>
+
+            </div>
+          </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card" >
+            <img class="card-img-top" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F4%2F4f%2FBlack_hole_-_Messier_87_crop_max_res.jpg%2F278px-Black_hole_-_Messier_87_crop_max_res.jpg&f=1&nofb=1" alt="research" width="250" height="250">
+            <div class="card-body">
+              <h5 class="card-title"> <dt>Research </dt></h5>
+              <p class="card-text">I appreciate the people curious about the world that surround us.</p>
+              <div id="btn3">
+                <button class="btn btn-primary" v-on:click="isHidden = !isHidden">+ Info</button>
+                <p v-if="!isHidden" style="color: #195168">
+                    I'd like to focus my career in research, specially working with computer vision.
+                </p>
+                </div>
+            </div>
+          </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+var app = new Vue({
+  el: '#btn1',
+  data: {
+    isHidden: true
+  }
+})
+</script>
+
+<script>
+var app = new Vue({
+  el: '#btn2',
+  data: {
+    isHidden: true
+  }
+})
+</script>
+<script>
+var app = new Vue({
+  el: '#btn3',
+  data: {
+    isHidden: true
+  }
+})
+</script>
 
 </body>
 </html>
