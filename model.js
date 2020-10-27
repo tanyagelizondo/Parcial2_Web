@@ -4,7 +4,7 @@ mongoose.Promise = global.Promise;
 let userSchema = mongoose.Schema({
     name: { type: String, require: true },
     jobTitle: {type:String},
-    jobDescription: {type: String},
+    jobDescription: {type: Array},
     startDate: {type: String},
     endDate: {type: String}
 });

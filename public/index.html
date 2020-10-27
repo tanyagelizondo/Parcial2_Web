@@ -31,10 +31,9 @@
         <hr>
         <h4>WORK EXPERIENCE <span class="glyphicon glyphicon-briefcase"></span></h4>
         <hr>
-        8/17 - Present Six Sigma, Monterrey, Mexico
-        <li>Proposed a database design for the organization of more than 1500 clients.</li>
-        <li>Consulting in Lean Six Sigma Projects.</li>
-        <li>Automatized creation of proposals.</li>
+        <div id = "WorkExperience">
+          
+        </div>
     </div>
   </div>
 </div>
@@ -135,9 +134,32 @@
 
 <script>
 fetch("/getWorkplace/SixSigma")
+.then (data => data.json())
+.then (data => {
 
-.then (data => data.json ()
-).then (data => console.log(data))
+  console.log(data);
+    let WorkExperience = document.querySelector('#WorkExperience');
+
+    for (let i = 0; i < data.length; i++) {
+        let div = document.createElement('div')
+
+        div.innerHTML = `<p>${data[i].startDate} - ${data[i].endDate} | ${data[i].name} - ${data[i].jobTitle}</p>`
+
+        let ul = document.createElement('ul');
+
+        for (let j = 0; j < data[i].jobDescription.length; j++) {
+            let li = document.createElement('li')
+
+            li.textContent = data[i].jobDescription[j];
+
+            ul.appendChild(li);
+        }
+
+        div.appendChild(ul);
+        WorkExperience.appendChild(div);
+    }
+
+})
 
 </script>
 
